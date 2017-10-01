@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/index" name="signup" method="post">
+    <table>
+        <tr>
+            <td><label>User Name:</label></td>
+            <td><input type="text" pattern='.{3,20}' title='Between 3 and 20 characters.' name="user-name" id="user-name" value='{{ user_name }}'/></td>
+            <td class='error'>{{ user_name_err }}</td>
+        </tr>
+        <tr>
+            <td><label>Password:</label></td>
+            <td><input type="password" pattern='.{3,20}' title='Between 3 and 20 characters.' name="password" id="password"/></td>
+            <td class='error'>{{ pw_err }}</td>
+        </tr>
+        <tr>
+            <td><label>Confirm Password:</label></td>
+            <td><input type="password" name="confirm" id="confirm" /></td>               
+            <td class='error'>{{ confirm_err }}</td>      
+        </tr>
+        <tr>
+            <td><label>Email(optional):</label></td>
+            <td><input type="text" pattern='.{3,20}' title='Between 3 and 20 characters, no spaces.' name="email" id="email" value='{{ email }}'/></td>
+            <td class='error'>{{ email_err }}</td>
+        </tr>
+    </table>
+    <input type="submit" value="Sign-Up" />
+</form>
+{% endblock %}
