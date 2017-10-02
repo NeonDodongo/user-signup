@@ -35,7 +35,7 @@ def log_in():
     if len(pw) < 3 or len(pw) > 20:
         pw_err = "Invalid password must be between 3 and 20 characters"
     if confirm_pw != pw:
-        confirm_err = "Passwords do no match."
+        confirm_err = "Passwords do not match."
     if len(email) < 3 and len(email) > 20:
         email_err = "Invalid length, must be between 3 and 20 characters."
     else:
